@@ -1,0 +1,129 @@
+{
+    "metaData": {
+        "value": {
+            "applicationName": "DemoApp",
+            "applicationEnvironment": "Development",
+            "version": "0.0.1"
+        }
+    },
+    "firewallRules": {
+        "value": {
+            "applicationRules": [
+                {
+                    "name": "appRc1",
+                    "properties": {
+                        "priority": 102,
+                        "action": {
+                            "type": "Allow"
+                        },
+                        "rules": [
+                            {
+                                "name": "appRule1",
+                                "protocols": [
+                                    {
+                                        "port": "80",
+                                        "protocolType": "http"
+                                    }
+                                ],
+                                "targetFqdns": [
+                                    "www.microsoft.com"
+                                ],
+                                "sourceAddresses": [
+                                    "10.0.0.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "appRc2",
+                    "properties": {
+                        "priority": 103,
+                        "action": {
+                            "type": "Allow"
+                        },
+                        "rules": [
+                            {
+                                "name": "appRule1",
+                                "protocols": [
+                                    {
+                                        "port": "80",
+                                        "protocolType": "http"
+                                    }
+                                ],
+                                "targetFqdns": [
+                                    "www.microsoft.com"
+                                ],
+                                "sourceAddresses": [
+                                    "10.0.0.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "networkRules": [
+                {
+                    "name": "netRc1",
+                    "properties": {
+                        "priority": 201,
+                        "action": {
+                            "type": "Allow"
+                        },
+                        "rules": [
+                            {
+                                "name": "netRule1",
+                                "protocols": [
+                                    "TCP"
+                                ],
+                                "sourceAddresses": [
+                                    "10.0.0.0/24"
+                                ],
+                                "destinationAddresses": [
+                                    "*"
+                                ],
+                                "destinationPorts": [
+                                    "8000-8999"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "natRules": [
+                {
+                    "name": "natRc1",
+                    "properties": {
+                        "priority": 201,
+                        "action": {
+                            "type": "Allow"
+                        },
+                        "rules": [
+                            {
+                                "name": "natRule1",
+                                "sourceAddresses": [
+                                    "10.0.0.0/24"
+                                ],
+                                "destinationAddresses": [
+                                    "string"
+                                ],
+                                "destinationPorts": [
+                                    "string"
+                                ],
+                                "protocols": [
+                                    "string"
+                                ],
+                                "translatedAddress": "string",
+                                "translatedPort": "string",
+                                "translatedFqdn": "string",
+                                "sourceIpGroups": [
+                                    "string"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
